@@ -1,46 +1,51 @@
 .container {
-	padding: 0 15px;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	margin: 0 auto;
-	@media (min-width: $mobile) {
-		width: 750px;
-	}
-	@media (min-width: 992px) {
-		width: 970px;
-	}
-	@media (min-width: 1200px) {
-		width: 1170px;
-	}
+    padding: 0 15px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    @media (min-width: $mobile) {
+        padding: 0;
+        width: 750px;
+    }
+    @media (min-width: 992px) {
+        width: 970px;
+    }
+    @media (min-width: 1200px) {
+        width: 1170px;
+    }
 }
 body {
-	// background-color: $lighter;
-	max-height: 100vh;
-	overflow: hidden;
+    // background-color: $lighter;
+    max-height: 100vh;
+    overflow: hidden;
 }
 .main {
-	display: flex;
-	flex-direction: column;
-	@media (min-width: $mobile) {
-		flex-direction: row;
-	}
-	&-m {
-	}
-	flex: 1;
-	& > * {
-		color: $text;
-		flex: 1;
-		margin: 16px;
-		padding: 20px;
-		border: 1px solid $light;
-		background-color: $lighter;
-		border-radius: 12px;
-		box-shadow: 0px 4px 16px -5px rgba(23, 54, 48, 1);
-		max-height: calc(100vh - 100px);
-		overflow-y: scroll;
-		&::-webkit-scrollbar {
-			width: 1px;
-		}
-	}
+    display: flex;
+    flex-direction: column;
+    @media (min-width: $mobile) {
+        flex-direction: row;
+    }
+    &-m {
+    }
+    flex: 1;
+    & > * {
+        color: $text;
+        flex: 1;
+        margin: 16px;
+        padding: 20px;
+        border: 1px solid $light;
+        background-color: $text;
+        background-color: #f2f2f2;
+        border-radius: 12px;
+        box-shadow: 0px 4px 16px -5px rgba(23, 54, 48, 1);
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+    }
+}
+#root {
+    background-color: $lighter;
 }

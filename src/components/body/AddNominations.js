@@ -59,15 +59,21 @@ export default class AddNomations extends Component {
                         </div>
                     </div>
                     <NominationsContext.Consumer>
-                        {({ addNomination }) => (
+                        {({ addNomination, nom }) => (
                             <div className="movie-con">
-                                {this.state.result.map((d) => (
-                                    <Movie
-                                        data={d}
-                                        onButton={() => addNomination(d)}
-                                        buttonText="Add Nomination"
-                                    />
-                                ))}
+                                {this.state.result.map((d) => {
+                                    for (let { imdbID } of nom) {
+                                        if (imdbID === d.imdbID) return;
+                                    }
+                                    return (
+                                        <Movie
+                                            data={d}
+                                            onButton={() => addNomination(d)}
+                                            buttonText="Add Nomination"
+                                            icon="plus square outline icon"
+                                        />
+                                    );
+                                })}
                             </div>
                         )}
                     </NominationsContext.Consumer>

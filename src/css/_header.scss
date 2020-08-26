@@ -54,10 +54,18 @@
     box-shadow: 0px 2px 8px -2px rgba(23, 54, 48, 1);
     cursor: pointer;
     &-mov {
-        margin-top: 4px;
-        background-color: $green;
+        height: fit-content;
+        box-shadow: unset;
+        background-color: unset;
+        align-self: center;
+        @include text('large');
+        color: $green;
+        & > i {
+            margin: 0;
+        }
         &[text='Remove Nomination'] {
-            background-color: red;
+            // background-color: red;
+            color: red;
         }
         width: fit-content;
     }

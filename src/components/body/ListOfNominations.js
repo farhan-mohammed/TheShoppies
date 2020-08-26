@@ -39,7 +39,7 @@ export default class AddNomations extends Component {
                         )}
                     </NominationsContext.Consumer>
                 </div>
-                <div className="movie-con">
+                <div className="movie-con ui list">
                     <NominationsContext.Consumer>
                         {({ nom, removeNomination }) =>
                             nom.map((d) => (
@@ -48,6 +48,7 @@ export default class AddNomations extends Component {
                                     onButton={() => removeNomination(d.imdbID)}
                                     buttonText="Remove Nomination"
                                     color="#f00"
+                                    icon="minus square outline icon"
                                 />
                             ))
                         }
