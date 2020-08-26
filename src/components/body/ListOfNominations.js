@@ -26,17 +26,21 @@ export default class AddNomations extends Component {
                 >
                     <h2 style={{ margin: 0 }}>My Nomations</h2>
                     <NominationsContext.Consumer>
-                        {({ nom }) => (
-                            <CopyToClipboard
-                                text={`${window.location.origin}?data=${JSON.stringify(
-                                    nom.map(({ imdbID }) => imdbID)
-                                )}`}
-                            >
-                                <div className="cpy" role="button">
-                                    Copy Link
-                                </div>
-                            </CopyToClipboard>
-                        )}
+                        {({ nom }) => {
+                            let data = JSON.stringify(nom.map(({ imdbID }) => imdbID));
+                            data = data.substring(1, data.length - 1);
+                            return (
+                                <CopyToClipboard
+                                    text={`${window.location.origin}?data=${data
+                                        .replace(',', 'MM')
+                                        .replace('"', 'NN')}`}
+                                >
+                                    <div className="cpy" role="button">
+                                        Copy Link
+                                    </div>
+                                </CopyToClipboard>
+                            );
+                        }}
                     </NominationsContext.Consumer>
                 </div>
                 <div className="movie-con ui list">

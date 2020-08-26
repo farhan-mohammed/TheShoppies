@@ -63,6 +63,7 @@ export default class AddNomations extends Component {
                             <div className="movie-con">
                                 {this.state.result.map((d) => {
                                     for (let { imdbID } of nom) {
+                                        // eslint-disable-next-line
                                         if (imdbID === d.imdbID) return;
                                     }
                                     return (
