@@ -23,6 +23,9 @@ h2 {
 
 .header {
   margin-top: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .header-logo {
@@ -72,6 +75,49 @@ h2 {
   margin: 0 10px;
   position: relative;
   height: 1em;
+}
+
+.header-text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.header-text > a, .header-text > a:hover, .header-text > a:visited, .header-text > a:active {
+  color: #108043;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 500;
+  margin: 0 16px 0 12px;
+}
+
+@media (min-width: 768px) {
+  .header-text > a, .header-text > a:hover, .header-text > a:visited, .header-text > a:active {
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: 500;
+  }
+}
+
+.header-text > .cpy {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: unset;
+  color: #f9fafb;
 }
 
 .cpy {

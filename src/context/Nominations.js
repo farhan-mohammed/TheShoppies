@@ -20,11 +20,19 @@ export class NominationsStore extends React.Component {
                 out.push({ Title, Year, Poster, imdbID, Type });
             }
             this.setState({ nom: out });
+            cookies.set('FarhanShoppiesData', out);
+            window.location.replace(window.location.origin);
             return out;
         };
+
         var parsed = queryString.parse(window.location.search);
+
         if (parsed.data) {
-            loadMovies(JSON.parse(parsed.data));
+            try {
+                loadMovies(JSON.parse(parsed.data));
+            } catch {
+                alert('Data parameter cannot be parsed.');
+            }
         }
     }
     render() {

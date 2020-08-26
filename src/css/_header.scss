@@ -1,5 +1,7 @@
 .header {
     margin-top: 16px;
+    display: flex;
+
     &-logo {
         display: flex;
         align-items: center;
@@ -18,6 +20,28 @@
             margin: 0 10px;
             position: relative;
             height: 1em;
+        }
+    }
+    &-text {
+        & > a {
+            &,
+            &:hover,
+            &:visited,
+            &:active {
+                color: $dark;
+                @include text('large');
+                margin: 0 16px 0 12px;
+            }
+        }
+        flex: 1;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: flex-start;
+        & > .cpy {
+            width: fit-content;
+            cursor: unset;
+            color: $text;
         }
     }
 }
