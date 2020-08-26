@@ -1,0 +1,23 @@
+.header {
+	margin-top: 16px;
+	&-logo {
+		display: flex;
+		align-items: center;
+		@include text('xlarge');
+
+		& > h1 {
+			@include text('xlarge');
+			margin-top: 0;
+			font-family: 'Raleway';
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			user-select: none;
+			color: $darker;
+		}
+		& > img {
+			margin: 0 10px;
+			position: relative;
+			height: 1em;
+		}
+	}
+}

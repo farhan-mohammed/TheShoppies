@@ -1,0 +1,98 @@
+// https://polaris.shopify.com/design/typography#navigation
+$lighter: #e3f1df;
+$light: #bbe5b3;
+$green: #50b83c;
+$dark: #108043;
+$darker: #173630;
+$text: #f9fafb;
+
+$mobile: 768px;
+
+@mixin text($size) {
+	@if $size== "xlarge" {
+		font-size: 27px;
+		line-height: 36px;
+		font-weight: 500;
+		@media (min-width: $mobile) {
+			font-size: 42px;
+			line-height: 44px;
+			font-weight: 500;
+		}
+	}
+	@if $size== "large" {
+		font-size: 24px;
+		line-height: 28px;
+		font-weight: 500;
+		@media (min-width: 768px) {
+			font-size: 28px;
+			line-height: 32px;
+			font-weight: 500;
+		}
+	}
+	@if $size== "med" {
+		font-size: 27px;
+		line-height: 36px;
+		font-weight: 500;
+		@media (min-width: 768px) {
+			font-size: 26px;
+			line-height: 32px;
+			font-weight: 400;
+		}
+	}
+	@if $size== "small" {
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: 400;
+		@media (min-width: 768px) {
+			font-size: 20px;
+			line-height: 24px;
+			font-weight: 400;
+		}
+	}
+	@if $size== "heading" {
+		font-size: 17px;
+		line-height: 24px;
+		font-weight: 500;
+		@media (min-width: 768px) {
+			font-size: 16px;
+			line-height: 24px;
+			font-weight: 500;
+		}
+	}
+	@if $size== "subheading" {
+		font-size: 13px;
+		line-height: 16px;
+		font-weight: 600;
+		text-transform: uppercase;
+		@media (min-width: 768px) {
+			font-size: 12px;
+			line-height: 16px;
+			font-weight: 600;
+		}
+	}
+	@if $size== "body" {
+		font-size: 15px;
+		line-height: 20px;
+		font-weight: 400;
+		@media (min-width: 768px) {
+			font-size: 14px;
+			line-height: 20px;
+			font-weight: 400;
+		}
+	}
+	@if $size== "caption" {
+		font-size: 13px;
+		line-height: 20px;
+		font-weight: 400;
+		@media (min-width: 768px) {
+			font-size: 12px;
+			line-height: 16px;
+			font-weight: 400;
+		}
+	}
+}
+h2 {
+	@include text('large');
+	color: $darker;
+	font-family: Raleway;
+}

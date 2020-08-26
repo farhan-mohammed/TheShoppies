@@ -1,0 +1,67 @@
+.movie {
+	&-con {
+		display: flex;
+		flex-direction: column;
+		height: inherit;
+	}
+	display: flex;
+	background-color: $dark;
+	color: $lighter;
+	align-items: center;
+	&:not(:last-child) {
+		margin-bottom: 12px;
+	}
+	padding: 8px;
+	border-radius: 4px;
+	&-poster {
+		user-select: none;
+		max-width: 75px;
+		& > img {
+			width: 100%;
+		}
+	}
+	&-data {
+		align-self: stretch;
+		flex: 1;
+		margin: 16px;
+		&__name {
+			@include text('med');
+		}
+		&__year {
+		}
+		&__imdb {
+		}
+	}
+}
+
+.adno {
+	&-divider {
+		display: flex;
+		justify-content: space-between;
+		padding: 16px 12px;
+
+		&__prev,
+		&__next {
+			width: 110px;
+			background-color: $dark;
+			padding: 8px;
+			border-radius: 5px;
+			user-select: none;
+			cursor: pointer;
+			box-shadow: 0px 2px 8px -2px rgba(23, 54, 48, 1);
+			@include text('subheading');
+		}
+		&__prev {
+		}
+		&__next {
+			text-align: right;
+		}
+		&__page {
+			color: $darker;
+			position: relative;
+			top: 2px;
+			align-self: center;
+			@include text('small');
+		}
+	}
+}
