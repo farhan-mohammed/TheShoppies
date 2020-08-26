@@ -47,6 +47,9 @@ export class NominationsStore extends React.Component {
                         );
                     },
                     addNomination: (d) => {
+                        for (let { imdbID } of this.state.nom) {
+                            if (d.imdbID === imdbID) return;
+                        }
                         this.setState({ nom: [...this.state.nom, d] }, () =>
                             cookies.set('FarhanShoppiesData', this.state.nom)
                         );
