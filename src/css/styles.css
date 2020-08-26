@@ -200,9 +200,11 @@ h2 {
   }
 }
 
-body {
-  max-height: 100vh;
-  overflow: hidden;
+@media (min-width: 768px) {
+  body {
+    max-height: 100vh;
+    overflow: hidden;
+  }
 }
 
 .main {

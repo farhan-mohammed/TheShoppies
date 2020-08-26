@@ -16,9 +16,10 @@
     }
 }
 body {
-    // background-color: $lighter;
-    max-height: 100vh;
-    overflow: hidden;
+    @media (min-width: $mobile) {
+        max-height: 100vh;
+        overflow: hidden;
+    }
 }
 .main {
     display: flex;
