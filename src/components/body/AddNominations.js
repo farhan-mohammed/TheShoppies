@@ -17,6 +17,8 @@ export default class AddNomations extends Component {
                     term: this.state.in,
                 });
                 console.log(this.state);
+            } else {
+                alert(data.Error);
             }
         });
     };
@@ -45,7 +47,7 @@ export default class AddNomations extends Component {
                             role="button"
                             onClick={() => this.changePage(-1)}
                         >
-                            <i class="arrow circle left icon" style={{ margin: '0 8px' }} />
+                            <i className="arrow circle left icon" style={{ margin: '0 8px' }} />
                             Previous
                         </div>
                         <div className="adno-divider__page">
@@ -57,7 +59,7 @@ export default class AddNomations extends Component {
                             onClick={() => this.changePage(1)}
                         >
                             Next
-                            <i class="arrow circle right icon" style={{ margin: '0 8px' }} />
+                            <i className="arrow circle right icon" style={{ margin: '0 8px' }} />
                         </div>
                     </div>
                     <NominationsContext.Consumer>
@@ -70,6 +72,7 @@ export default class AddNomations extends Component {
                                     }
                                     return (
                                         <Movie
+                                            key={d.imdbID}
                                             data={d}
                                             onButton={() => addNomination(d)}
                                             buttonText="Add Nomination"
@@ -90,7 +93,7 @@ export default class AddNomations extends Component {
                 <h2>Add Nominations</h2>
                 <div className="adno-search">
                     <div
-                        class="ui icon input"
+                        className="ui icon input"
                         style={{ width: '100%' }}
                         value={this.state.in}
                         onChange={(e) => this.setState({ in: e.target.value })}
@@ -100,7 +103,7 @@ export default class AddNomations extends Component {
                             placeholder="Search Movies..."
                             onKeyDown={(e) => (e.key === 'Enter' ? this.onSubmit() : '')}
                         />
-                        <i class="circular search link icon" onClick={this.onSubmit} />
+                        <i className="circular search link icon" onClick={this.onSubmit} />
                     </div>
                 </div>
                 {this.renderResults()}

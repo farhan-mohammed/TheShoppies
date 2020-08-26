@@ -48,6 +48,7 @@ export default class AddNomations extends Component {
                         {({ nom, removeNomination }) =>
                             nom.map((d) => (
                                 <Movie
+                                    key={d.imdbID}
                                     data={d}
                                     onButton={() => removeNomination(d.imdbID)}
                                     buttonText="Remove Nomination"
