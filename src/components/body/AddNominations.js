@@ -48,7 +48,9 @@ export default class AddNomations extends Component {
                             <i class="arrow circle left icon" style={{ margin: '0 8px' }} />
                             Previous
                         </div>
-                        <div className="adno-divider__page">Page {this.state.page}</div>
+                        <div className="adno-divider__page">
+                            Page {this.state.page} / {Math.ceil(this.state.total / 10)}
+                        </div>
                         <div
                             className="adno-divider__next"
                             role="button"
