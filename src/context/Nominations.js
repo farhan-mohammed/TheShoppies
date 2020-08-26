@@ -29,7 +29,7 @@ export class NominationsStore extends React.Component {
 
         if (parsed.data) {
             try {
-                loadMovies(JSON.parse(`[${parsed.data.replace('MM', ',').replace('NN', '"')}]`));
+                loadMovies(JSON.parse(`[${parsed.data.replace(/MM/g, ',').replace(/NN/g, '"')}]`));
             } catch {
                 alert('Data parameter cannot be parsed.');
             }

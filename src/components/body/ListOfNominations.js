@@ -32,8 +32,8 @@ export default class AddNomations extends Component {
                             return (
                                 <CopyToClipboard
                                     text={`${window.location.origin}?data=${data
-                                        .replace(',', 'MM')
-                                        .replace('"', 'NN')}`}
+                                        .replace(/,/g, 'MM')
+                                        .replace(/"/g, 'NN')}`}
                                 >
                                     <div className="cpy" role="button">
                                         Copy Link
