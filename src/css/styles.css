@@ -74,6 +74,31 @@ h2 {
   height: 1em;
 }
 
+.cpy {
+  background-color: #108043;
+  padding: 8px;
+  border-radius: 4px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-box-shadow: 0px 2px 8px -2px #173630;
+          box-shadow: 0px 2px 8px -2px #173630;
+  cursor: pointer;
+}
+
+.cpy-mov {
+  margin-top: 4px;
+  background-color: #50b83c;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.cpy-mov[text='Remove Nomination'] {
+  background-color: red;
+}
+
 .container {
   padding: 0 15px;
   min-height: 100vh;
