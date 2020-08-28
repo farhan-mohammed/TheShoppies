@@ -1,12 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import OMDB from '../../apis/OMDb';
-import Movie from './Movie';
+import Movie from '../modules/Movie';
 import NominationsContext from '../../context/Nominations';
 export default class AddNomations extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { in: '', result: [], page: 1, term: '', total: '' };
-    }
+    state = { in: '', result: [], page: 1, term: '', total: '' };
     onSubmit = () => {
         OMDB.get(``, { params: { s: this.state.in, type: 'movie' } }).then(({ data }) => {
             if (data.Response === 'True') {

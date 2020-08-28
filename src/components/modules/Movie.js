@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-
+// Movie compoenent, renders a movie row based on the props
 export default class Movie extends Component {
     render() {
-        const { Title, Year, imdbID, Poster } = this.props.data;
-        const { movieStyle } = this.props;
+        const { Title, Year, Poster } = this.props.data;
+        const { buttonText, onButton, icon } = this.props;
         return (
-            <div className="item movie" style={movieStyle} key={imdbID}>
+            <div className="item movie">
                 <img
                     class="ui  image"
-                    style={{ width: '60px' }}
                     src={Poster}
                     alt={Title}
                     onError={(e) => {
@@ -21,13 +20,8 @@ export default class Movie extends Component {
                         <div className="movie-data__name">{Title}</div>
                         <div className="movie-data__year ">{Year}</div>
                     </div>
-                    <div
-                        className="cpy cpy-mov"
-                        text={this.props.buttonText}
-                        onClick={this.props.onButton}
-                    >
-                        <i class={this.props.icon}></i>
-                        {/* {this.props.buttonText} */}
+                    <div className="cpy cpy-mov" text={buttonText} onClick={onButton}>
+                        <i class={icon}></i>
                     </div>
                 </div>
             </div>

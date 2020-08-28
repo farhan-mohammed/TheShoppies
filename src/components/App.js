@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import Body from './Body';
+
+import MyNominations from './sections/MyNominations';
+import AddNominations from './sections/AddNominations';
 import { NominationsStore } from '../context/Nominations';
 export default class App extends Component {
     render() {
@@ -8,7 +10,10 @@ export default class App extends Component {
             <div className="container">
                 <NominationsStore>
                     <Header />
-                    <Body />
+                    <main className="main">
+                        <MyNominations />
+                        <AddNominations />
+                    </main>
                 </NominationsStore>
             </div>
         );
