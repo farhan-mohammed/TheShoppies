@@ -2,7 +2,9 @@ Hi Shopify!
 
 This is my submission for the front-end developer internship challenge. 
 
-[**View Demo**](https://shoppies.farhan.site/)
+## View Demo
+
+https://shoppies.farhan.site/
 
 ![image](https://user-images.githubusercontent.com/44536753/116790107-9eb30400-aa80-11eb-8cee-2aa5c0e6d7c4.png)
 
