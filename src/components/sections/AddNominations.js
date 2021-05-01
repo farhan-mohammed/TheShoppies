@@ -4,6 +4,7 @@ import Movie from '../modules/Movie';
 import NominationsContext from '../../context/Nominations';
 export default class AddNomations extends Component {
     state = { in: '', result: [], page: 1, term: '', total: '' };
+    // Searching for a movie
     onSubmit = () => {
         OMDB.get(``, { params: { s: this.state.in, type: 'movie' } }).then(({ data }) => {
             if (data.Response === 'True') {
@@ -13,12 +14,13 @@ export default class AddNomations extends Component {
                     total: data.totalResults,
                     term: this.state.in,
                 });
-                console.log(this.state);
             } else {
                 alert(data.Error);
             }
         });
     };
+    // Changing the page for the research results on the movie
+    // change can be -1 or +1
     changePage = (change) => {
         if (this.state.term) {
             let { page, total } = this.state;
@@ -26,7 +28,6 @@ export default class AddNomations extends Component {
                 OMDB.get(``, {
                     params: { s: this.state.term, type: 'movie', page: page + change },
                 }).then(({ data }) => {
-                    console.log(data);
                     if (data.Response === 'True') {
                         this.setState({ result: data.Search, page: page + change, in: '' });
                     }
