@@ -40,8 +40,10 @@
         justify-content: flex-start;
         & > .cpy {
             width: fit-content;
-            cursor: unset;
             color: $text;
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 }

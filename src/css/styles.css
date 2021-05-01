@@ -116,8 +116,11 @@ h2 {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  cursor: unset;
   color: #f9fafb;
+}
+
+.header-text > .cpy:hover {
+  cursor: pointer;
 }
 
 .cpy {
