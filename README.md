@@ -20,3 +20,12 @@ https://shoppies.farhan.site/
 ### You can create shareable links
 
 Check out some of my favourite movies: https://shoppies.farhan.site?data=NNtt1375666NNMMNNtt7286456NNMMNNtt4154796NNMMNNtt1670345NNMMNNtt9495224NN
+
+## How to Run
+
+This application was built using create-react-app and requires node.js
+
+```
+$ npm install
+$ npm run start
+```

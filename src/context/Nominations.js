@@ -50,12 +50,16 @@ export class NominationsStore extends React.Component {
             <Context.Provider
                 value={{
                     ...this.state,
+                    clearNominations: () => {
+                        cookies.set('FarhanShoppiesData', []);
+                        this.setState({ nom: [] });
+                    },
                     removeNomination: (id) => {
                         // filter function remove the item
                         // updates the cookies as well
                         this.setState(
                             { nom: this.state.nom.filter(({ imdbID }) => imdbID !== id) },
-                            () => cookies.set('FarhanShoppiesData', this.state.nom)
+                            () => cookies.set('FarhanShoppiesData', this.state.nom),
                         );
                     },
                     addNomination: (d) => {
@@ -65,7 +69,7 @@ export class NominationsStore extends React.Component {
                         }
                         // updates the cookies as well
                         this.setState({ nom: [...this.state.nom, d] }, () =>
-                            cookies.set('FarhanShoppiesData', this.state.nom)
+                            cookies.set('FarhanShoppiesData', this.state.nom),
                         );
                     },
                 }}
