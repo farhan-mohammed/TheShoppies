@@ -75,6 +75,7 @@ export default class AddNomations extends Component {
                                             onButton={() => addNomination(d)}
                                             buttonText="Add Nomination"
                                             icon="plus square outline icon"
+                                            showIcon={nom.length < 5}
                                         />
                                     );
                                 })}
